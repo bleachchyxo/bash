@@ -1,2 +1,3 @@
-# bash
-All my bash projects in here
+# Bash
+## All my bash projects here
+This is me practicing my bash skills
