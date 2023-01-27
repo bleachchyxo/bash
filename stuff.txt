@@ -1,0 +1,36 @@
+# Convertion commands
+
+# To binary
+echo "hello" | xxd -b
+00000000: 01101000 01100101 01101100 01101100 01101111           hello
+
+# From binary to ASCII
+echo "01101000 01100101 01101100 01101100 01101111" | perl -lape '$_=pack"(B8)*",@F'
+hello
+
+# To HEX
+echo "hello" | xxd -p -c 1000000
+
+# From HEX to ASCII
+echo "6865 6c6c 6f0a" | xxd -r -p
+hello
+
+
+# Creating a Key
+
+# Used disk space
+df --total | awk '/total/ {print $3}'
+
+# Time
+date | awk '{print $5}'
+
+# Binary to Decimal
+echo "$((2#10010))" # Este lo va a traducir a numeros otra vez
+
+# Decimal to binary
+echo "obase=2;$number" | bc
+
+# reading specificl lines of a file
+sed -n 5p file
+# range
+sed -n 5,10p file
